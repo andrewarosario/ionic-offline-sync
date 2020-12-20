@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <h1 class="ion-text-center">
+    <ion-icon class="logo" name="basket" color="primary"></ion-icon>
+  </h1>
 
+  <app-login-form 
+    [loginForm]="loginForm"
+    (submitForm)="submit()"
+  ></app-login-form>
+
+  <ion-button
+    expand="block"
+    fill="clear">
+    Criar Conta
+  </ion-button>
 </ion-content>
