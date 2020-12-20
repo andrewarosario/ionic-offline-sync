@@ -1,0 +1,49 @@
+<form [formGroup]="loginForm" (submit)="submitForm.emit()">
+  <ion-item>
+    <ion-icon name="mail" color="primary" slot="start"></ion-icon>
+    <ion-input
+      type="email"
+      placeholder="Email"
+      formControlName="email"
+      inputmode="email"
+      autofocus="true"
+    ></ion-input>
+    <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">
+      Email obrigatório
+    </ion-note>
+    <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('email')">
+      Email inválido
+    </ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="key" color="primary" slot="start"></ion-icon>
+    <ion-input
+      type="password"
+      placeholder="Senha"
+      formControlName="password"
+    ></ion-input>
+    <ion-note
+      slot="end"
+      color="danger"
+      *ngIf="password.dirty && password.hasError('required')"
+    >
+      Senha obrigatória
+    </ion-note>
+    <ion-note
+      slot="end"
+      color="danger"
+      *ngIf="password.dirty && password.hasError('minlength')"
+    >
+      Mínimo 6 caracteres
+    </ion-note>
+  </ion-item>
+
+  <ion-button
+    expand="block"
+    type="submit"
+    [disabled]="loginForm.invalid"
+  >
+    Entrar
+  </ion-button>
+</form>
