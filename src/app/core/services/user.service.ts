@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { State } from 'src/app/shared/classes/state';
 import { User } from '../models/user';
 
 @Injectable({
@@ -7,8 +8,7 @@ import { User } from '../models/user';
 })
 export class UserService {
 
-  private userSubject$ = new BehaviorSubject<User>(null);
-  public user$ = this.userSubject$.asObservable();
+  public user = new State<User>();
 
   constructor() { }
 }
