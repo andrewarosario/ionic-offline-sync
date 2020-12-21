@@ -15,13 +15,14 @@ export class AuthService {
     private router: Router
   ) { }
 
-  login(user: User) {
+  login(user: User): void {
     this.userService.user.setValue(user);
     this.storage.set('user', user);
     this.router.navigate(['/tabs']);
   }
 
-  logout() {
+  logout(): void {
+    this.storage.set('user', null);
     this.userService.user.setValue(null);
   }
 }
