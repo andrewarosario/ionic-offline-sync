@@ -9,6 +9,7 @@ import { AbstractControl, FormControl } from '@angular/forms';
 export class LoginFormComponent implements OnInit {
 
   @Input() loginForm: FormControl;
+  @Input() textSubmit: string;
   @Output() submitForm = new EventEmitter<void>();
   constructor() { }
 

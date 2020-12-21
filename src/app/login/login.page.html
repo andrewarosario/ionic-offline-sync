@@ -6,12 +6,14 @@
 
   <app-login-form 
     [loginForm]="loginForm"
+    [textSubmit]="modeSignup ? 'Cadastrar' : 'Entrar'"
     (submitForm)="submit()"
   ></app-login-form>
 
   <ion-button
+    (click)="toggleModeSignup()"
     expand="block"
     fill="clear">
-    Criar Conta
+    {{ modeSignup ? 'Já possuo uma conta' : 'Criar Conta' }}
   </ion-button>
 </ion-content>

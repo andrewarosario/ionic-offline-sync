@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginPage implements OnInit {
 
   public loginForm: FormGroup;
+  public modeSignup = false;
 
   constructor(
     private fb: FormBuilder,
@@ -26,5 +27,9 @@ export class LoginPage implements OnInit {
   }
 
   submit(): void {
+  }
+
+  toggleModeSignup(): void {
+    this.modeSignup = !this.modeSignup;
   }
 }
