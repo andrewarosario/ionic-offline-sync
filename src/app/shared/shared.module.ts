@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormErrorComponent } from './components/form-error/form-error.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
 @NgModule({
   declarations: [
-    FormErrorComponent
+    FormErrorComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     ReactiveFormsModule,
     IonicModule,
-    FormErrorComponent
+    FormErrorComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }
