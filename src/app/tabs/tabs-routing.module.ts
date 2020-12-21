@@ -10,6 +10,10 @@ const routes: Routes = [
     canActivate: [ AuthGuard ],
     children: [
       {
+        path: 'items',
+        loadChildren: () => import('../items/items.module').then( m => m.ItemsPageModule)
+      },
+      {
         path: 'tab1',
         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
@@ -23,14 +27,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/items',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/items',
     pathMatch: 'full'
   }
 ];
